@@ -1,0 +1,7 @@
+.main_cart{
+    border: 2px solid lightgray;
+    width: 30%;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
