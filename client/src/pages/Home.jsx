@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import Header from '../components/Header'
 import { Button,Divider,useDisclosure } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
@@ -18,11 +18,34 @@ import {
   InputLeftElement,
  
 } from "@chakra-ui/react";
+import {TailSpin} from "react-loader-spinner"
 import {SiMinutemailer} from "react-icons/si"
 export default function Home() {
   const nav = useNavigate()
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
+  const btnRef = React.useRef();
+  const [message,setmessage] = useState(null);
+  const[showmessage,setshowmessage]  = useState(true)
+  const [loader,setloader] = useState(true);
+  const Nav = useNavigate()
+  const input_val = useRef(null)
+  const HandleLoader = ()=>{
+  if(input_val.current.value !== ""){
+    setloader(false);
+    setshowmessage(true)
+
+    setTimeout(()=>{
+      setloader(true)
+
+      Nav("/sign")
+    },2000)
+  }
+  else {
+    setshowmessage(false)
+    setmessage("Field is Empty")
+  }
+   
+  }
   return (
    <>
    <Header  
@@ -35,7 +58,7 @@ export default function Home() {
         placement='right'
         onClose={onClose}
         finalFocusRef={btnRef}
-        size="md"
+        size="sm"
     
       >
         <DrawerOverlay />
@@ -55,26 +78,41 @@ continue with your Applications
               {/* <h3 className='pt-10 font-bold text-white text-center'>
               Enter your Email Address
               </h3> */}
-              <InputGroup marginRight={0} marginTop={10} marginLeft={10}>
+              <InputGroup marginRight={0} marginTop={10} marginLeft={0}>
           <InputLeftElement pointerEvents="none">
          <SiMinutemailer size={22} className="mt-3" color="black" />
           </InputLeftElement>
           <Input
+          ref={input_val}
             bg={"ButtonFace"}
             className="cursor-pointer"
             border={"ButtonHighlight"}
-            
+            type='email'
             width={400}
             placeholder= "Enter your Email Address"
             size="lg"
           />
         </InputGroup>
-              
+            <h3 className='text-red-700 text-sm mt-1'>
+              {showmessage ? "":message}
+              </h3>  
               <Button marginTop={5} width={400}
               bg={"Highlight"}
-              marginLeft={10}
+              marginLeft={0}
+             onClick = {HandleLoader}
               >
-                Send OTP
+               {loader?" Send OTP":(
+                <TailSpin
+                height="30"
+                width="50"
+                color="black"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
+               )}
               </Button>
             </div>
           </DrawerHeader>
@@ -96,7 +134,17 @@ continue with your Applications
 Let's hire your next great candidate. Fast.
 </h3>
 <Button onClick={()=>nav("/hiring")} bg={"Highlight"} fontWeight={500} color={""} mt={5} width={200}>
-Post a Job
+{true?"Post a Job":(
+  <Circles
+  height="80"
+  width="80"
+  color="#4fa94d"
+  ariaLabel="circles-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+/>
+)}
 </Button>
     </div>
     <div className='pl-32'>
