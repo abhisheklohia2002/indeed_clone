@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import Signin from '../pages/Sign-in'
 import FindPage from '../pages/FindPage'
 import JobSeeker from '../pages/JobSeeker'
+import Hire from '../pages/Hire'
 
 
 
@@ -15,6 +16,7 @@ export default function AllRoute() {
     <Route path = "/sign" element = {<Signin/>} />
     <Route path='/hiring' element = {<FindPage/>} />
     <Route path = "/jobseeker" element = {<JobSeeker/>} />
+    <Route path='/hire' element = {<Hire/>} />
  </Routes>
  </>
   )

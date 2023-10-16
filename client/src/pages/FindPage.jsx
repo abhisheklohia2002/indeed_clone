@@ -2129,7 +2129,7 @@ export default function FindPage() {
         <h3 className="text-center text-2xl font-semibold pt-7">
           Hiring an employee?
           </h3>
-          <Button bg={"Highlight"} ml={40} mt={5} textAlign={"center"} justifyContent={"center"}>
+          <Button onClick = {()=>Nav("/hire")} bg={"Highlight"} ml={40} mt={5} textAlign={"center"} justifyContent={"center"}>
            Post Jobs
           </Button>
         </span>

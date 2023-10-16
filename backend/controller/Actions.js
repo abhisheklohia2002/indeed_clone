@@ -4,6 +4,7 @@ const PostModel = require("../models/PostJob")
 
 const PostJob = async(req,res)=>{
     const {profile,company,location,package,role} = req.body
+    console.log(req.body)
 try {
     if(profile !== "" || company !== "" || location !== "" || package !== "" || role !== ""){
 const CheckModel = new PostModel({
