@@ -71,7 +71,9 @@ const serverCall = await fetch("http://localhost:8080/api/hiring", {
 
 const res = await serverCall.json();
 console.log(res);
-
+if(res.status==200){
+  nav("/jobseeker")
+}
 }
 else {
   seterrorMessage("Please fill all field")

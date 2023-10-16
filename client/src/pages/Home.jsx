@@ -133,7 +133,7 @@ continue with your Applications
 <h3 className='font-bold text-6xl mb-5'>
 Let's hire your next great candidate. Fast.
 </h3>
-<Button onClick={()=>nav("/hiring")} bg={"Highlight"} fontWeight={500} color={""} mt={5} width={200}>
+<Button onClick={()=>nav("/hire")} bg={"Highlight"} fontWeight={500} color={""} mt={5} width={200}>
 {true?"Post a Job":(
   <Circles
   height="80"

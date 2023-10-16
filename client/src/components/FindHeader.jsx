@@ -2,7 +2,9 @@ import { Divider } from '@chakra-ui/react'
 import React from 'react'
 import {BiSolidHelpCircle,BiSolidUser} from "react-icons/bi"
 import {GiHamburgerMenu} from "react-icons/gi"
+import { useNavigate } from 'react-router-dom'
 export default function FindHeader({btnRef,onOpen,onClose}) {
+  const Nav = useNavigate()
   return (
     <>
     <div className='flex justify-between align-middle pt-2'>
@@ -11,6 +13,7 @@ export default function FindHeader({btnRef,onOpen,onClose}) {
         <GiHamburgerMenu ref={btnRef} onClick={onOpen} size={28} color="" className='mt-3 mr-3 ml-3 cursor-pointer'/>
     
   <svg
+  onClick={()=>Nav("/")}
           className="w-32 fill-blue-700 cursor-pointer"
           id="Layer_1"
           xmlns="http://www.w3.org/2000/svg"
