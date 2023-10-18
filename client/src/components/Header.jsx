@@ -31,8 +31,8 @@ export default function Header({btnRef,onOpen,onClose}) {
         <h3 className="pt-8 custom-button h-20">Resources</h3>
       </div>
       <div className="flex">
-        <Button onClick={()=>nav('/hiring')} bg={"ButtonFace"} color={""} mr={5}>
-          Back to hiring
+        <Button onClick={()=>nav('/message')} bg={"ButtonFace"} color={""} mr={5}>
+          Messages
         </Button>
         <Divider
           orientation="vertical"

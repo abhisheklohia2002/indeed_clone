@@ -4,9 +4,12 @@ const cors  = require("cors");
 const mongoose = require("mongoose");
 const route= require("./routes/Allroutes")
 const port = 8080
+const ShowErr = require("./middleware/ErrorMiddleware")
 app.use(cors())
 app.use(express.json());
 app.use("/api",route)
+app.use(ShowErr.notFound);
+app.use(ShowErr.ErrorHandler)
 mongoose.connect(`mongodb+srv://home:home@cluster0.sulz4do.mongodb.net/indeed?retryWrites=true&w=majority`,{
 
 }).then((res)=>console.log("db is connected")).catch((err)=>console.log(`not connected db`))
