@@ -3,6 +3,8 @@ import "./header.css";
 import { Button, Divider } from "@chakra-ui/react";
 import { AiOutlineUser } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+
+
 export default function Header({btnRef,onOpen,onClose}) {
   const nav = useNavigate();
   return (
@@ -48,7 +50,7 @@ export default function Header({btnRef,onOpen,onClose}) {
           height="auto"
         />
         <AiOutlineUser
-         ref={btnRef} onClick={onOpen}
+         ref={btnRef} onClick={()=>nav("/sign")}
           color="white"
           size={35}
           className="ml-5 mr-5 pt-2 cursor-pointer"

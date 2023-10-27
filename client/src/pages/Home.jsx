@@ -146,6 +146,21 @@ Let's hire your next great candidate. Fast.
 />
 )}
 </Button>
+
+<Button ml = {10} onClick={()=>nav("/jobseeker")} bg={"Highlight"} fontWeight={500} color={""} mt={5} width={200}>
+{true?"Search Job":(
+  <Circles
+  height="80"
+  width="80"
+  color="#4fa94d"
+  ariaLabel="circles-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+/>
+)}
+</Button>
+
     </div>
     <div className='pl-32'>
       <img className='w-4/4' src="https://img.freepik.com/free-vector/cartoon-man-giving-presentation-ecological-forum-speaker-standing-stage-during-press-conference-audience-silhouettes-flat-vector-illustration-ecology-media-concept-banner-website-design_74855-24005.jpg?w=996&t=st=1696654610~exp=1696655210~hmac=eb2eff1611ef6835a7192de73766516b05828bebed587594c2f792ffad9ee7b3" alt="" srcset="" />

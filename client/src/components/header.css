@@ -3,3 +3,10 @@
     border-bottom: 5px solid blue;
     
 }
+
+.App{
+    min-height: 100vh;
+    display: flex;
+    /* background-color: gray; */
+    background-position: center;
+}
